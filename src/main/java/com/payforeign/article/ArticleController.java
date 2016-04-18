@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("/service")
-//@Component
 public class ArticleController {
     
     @Autowired
