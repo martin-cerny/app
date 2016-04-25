@@ -20,18 +20,18 @@
     p:password="${jdbc.password}" /-->
 
     <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
-    <jpa:repositories base-package="com.payforeign" />
+    <!--<jpa:repositories base-package="com.payforeign" />-->
     
     <!-- Data Source -->
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" >
+    <!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" >
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost/payforeign" />
         <property name="username" value="root" />
         <property name="password" value="" />
-    </bean>
-    
+    </bean>-->
+   
     <!-- Hibernate -->
-    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <!--<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="packagesToScan" value="com.payforeign.article" />
         <property name="jpaVendorAdapter">
@@ -41,12 +41,17 @@
                 <property name="database" value="MYSQL" />
             </bean>
         </property>
-    </bean>
-    
+    </bean>-->
+
     <!-- enable the configuration of transactional behavior based on annotations -->
-    <tx:annotation-driven />
+    <!--<tx:annotation-driven />
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory" />
-    </bean>
+    </bean>-->
     
+    
+    <!-- Load in application properties reference  -->
+    <!--<bean id="applicationProperties" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="location" value="/WEB-INF/application.properties"/>
+    </bean>-->
 </beans>

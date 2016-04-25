@@ -1,6 +1,7 @@
 package com.payforeign.article;
 
 import com.payforeign.locale.LocaleEnum;
+import java.io.Serializable;
 import java.sql.Timestamp;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +10,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Entity
-public class Article {
+public class Article implements Serializable {
     
     @Id
     @GeneratedValue
